@@ -1,0 +1,53 @@
+body {
+    background-color: #000;    
+    margin: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+  }
+
+  /* neon */
+  body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.neon-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: relative;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+.neon-text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: #00f;
+    overflow: hidden;
+    mix-blend-mode: lighten;
+    animation: neon-before 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+    to {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                     0 0 20px rgba(255, 255, 255, 0.8),
+                     0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+@keyframes neon-before {
+    to {
+        transform: translate(-10px, -10px);
+    }
+}

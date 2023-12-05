@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Heart</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <audio id="myAudio" autoplay controls>
+        <source src="audio/audio.mp3" type="audio/mpeg">
+    </audio>
+    <!-- <div class="neon-text" data-text="Neon Text">Neon Text</div> -->
+
+    <script src="main.js"></script>
+
+    <script>
+        // Lấy thẻ audio
+        const audio = document.getElementById('myAudio');
+
+        // Đảm bảo trình duyệt hỗ trợ phát audio tự động
+        if (audio.autoplay) {
+        // Bắt đầu phát nhạc khi trang web được tải
+        audio.play();
+        }
+        if (audio.loop) {
+        // Lặp lại nhạc khi trang web được tải
+        audio.loop = true;
+        }
+        //tự động play khi trang web được tải xong
+        if (audio.readyState === 4) {
+        audio.play();
+        }
+        
+    </script>
+</body>
+</html>
