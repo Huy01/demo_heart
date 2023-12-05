@@ -9,7 +9,7 @@
 <body>
     <canvas id="canvas"></canvas>
 
-    <audio id="myAudio" autoplay controls>
+    <audio id="myAudio" autoplay>
         <source src="audio/audio.mp3" type="audio/mpeg">
     </audio>
     <!-- <div class="neon-text" data-text="Neon Text">Neon Text</div> -->
@@ -25,9 +25,10 @@
         // Bắt đầu phát nhạc khi trang web được tải
         audio.play();
         }
-        if (audio.loop) {
-        // Lặp lại nhạc khi trang web được tải
-        audio.loop = true;
+        //tự động lặp lại nhạc khi phát hết
+        if (audio.ended) {
+        audio.currentTime = 0;
+        audio.play();
         }
         //tự động play khi trang web được tải xong
         if (audio.readyState === 4) {
