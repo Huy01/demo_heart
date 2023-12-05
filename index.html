@@ -17,9 +17,15 @@
     <script src="main.js"></script>
 
     <script>
+
+        
         // Lấy thẻ audio
         const audio = document.getElementById('myAudio');
-
+        
+        window.addEventListener('load', function() {
+            audio.muted = true;
+            audio.play();
+        });
         // Đảm bảo trình duyệt hỗ trợ phát audio tự động
         if (audio.autoplay) {
         // Bắt đầu phát nhạc khi trang web được tải
